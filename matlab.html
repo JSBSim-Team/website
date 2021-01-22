@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+<TITLE>Using MATLAB/Simulink with the JSBSim Open Source Flight Dynamics Model</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="MATLAB, Simulink, JSBSim, flight simulation, fdm, flight dynamics, equations of motion" name=keywords>
+<LINK media=screen href="StyleSheet2.css" type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.6000.16674" name=GENERATOR></HEAD>
+<body leftMargin=50 topMargin=50 rightMargin=15>
+<DIV id=topTitle align=left>
+<DIV id=redBlockText>An <EM>open source</EM>,<BR>platform-independent,<BR>flight dynamics & control software library in C++
+</DIV>
+</DIV>
+<UL class=solidblockmenu>
+  <LI><A href="index.html">Home</A></LI>
+  <LI><A href="about.html">About Us</A></LI>
+  <LI><A href="https://sourceforge.net/p/jsbsim/news/">News</A></LI>
+  <LI><A href="download.html">Download</A></LI>
+  <LI><A href="documentation.html" title="JSBSim reference material">Documentation</A></li>
+  <LI><A href="https://sourceforge.net/p/jsbsim/mailman/">Mailing List</A></LI>
+  <LI><A href="links.html">Links</A></LI>
+  <LI><A href="http://www.sf.net/projects/jsbsim">SF.net/JSBSim</A></LI>
+  <LI><A href="https://sourceforge.net/p/jsbsim/bugs/" title="View or file a bug report.">Bugs</A></LI>
+  <LI><A href="https://sourceforge.net/p/jsbsim/feature-requests/" title="Make a suggestion to the JSBSim team.">Suggestions</A></LI>
+  <LI><A href="https://sourceforge.net/p/jsbsim/wiki/">Wiki</A> </LI>
+  <LI><A href="http://jsbsim.sf.net/aeromatic2.html" title="Generate aircraft configurations files.">Aeromatic</A></LI>
+  <LI><A class="current" href="http://jsbsim.sf.net/matlab.html" title="Use JSBSim with MATLAB/Simulink">MATLAB</A></LI>
+</UL>
+<DIV id=main align=center>
+<DIV id=mainText>
+<DIV align=left>
+<P/>
+<b>JSBSim S-function Project</b>
+<p/>
+Download the S-Function project <a href="http://dl.dropbox.com/u/5284957/JSBSim_MATLAB_release.zip">here (click here)</a>. NOTE: The current version of the S-Function project includes the latest official release candidate of JSBSim, and it is not compatible with the current version of JSBSim in CVS. We are working on fixing that.
+<hr/>
+<p/><b>Background</b><p/>
+Work on integrating JSBSim with MATLAB began with <a href="http://www.dias.unina.it/demarco/Work/JSBSim_Matlab/">Agostino De Marco's JSBSim_MATLAB project</a>.  By compiling JSBSim into a binary MEX file,  Agostino's JSBSimMex file made JSBSim aircraft model properties accessible from the MATLAB command line.  In MATLAB, a compiled binary MEX file is treated just like any other MATLAB function, which can be a very powerful way to bring existing C++ or FORTRAN code into the MATLAB environment. Agostino's project and resulting interface functions serve as the basis for the S-Function project that follows.  
+<p/><p/>
+Work on the JSBSim S-function project began in 2009 and has resulted in a version of JSBSim that is treated as a Simulink function block, allowing the user a rather convenient way to control a JSBSim simulation from within the Simulink environment. This allows for easy integration of JSBSim into any number of autopilot, flight control design, or flight model design and analysis projects designed in Simulink.  Like the JSBSimMEX file, the JSBSim S-function is another example of a MATLAB binary MEX file, however it differs in that  it has specific syntax to interface with the Simulink engine.
+<p/><p/>
+Currently the S-Function project is still under development, but is being used by a variety of researchers, aerospace companies and hobbyists.  The latest additions include a 3-d visualization tool, a multi-pane, tabbed user interface, and trim and linearization capability. The trim and linearization scripting is a modified version of a script written by Marius Niculescu of U-Dynamics for the development of UAV autopilot systems.
+<p/><b>The S-functions</b><p/>
+The JSBSim S-function project is actually made up of two different S-function MEX files- JSBSim_Sfunction.mex and JSBSim_Sfunction_trim.mex.  JSBSim_S-function is intended to be used to do the bulk of model simulation in Simulink.  It uses JSBSim's integrators to perform all vehicle state calculations and simply brings the resulting state, control and other data out to the Simulink/MATLAB workspace.  It is typically run with the discrete time solver as all states are discrete. However, in the case that a Simulink model is built using the JSBSim S-Function and that uses blocks that contain continuous time states then a continuous time Simulink solver can be used.
+<p/><p/>
+JSBSim_Sfunction_trim differs from the JSBSim_Sfunction in that it uses continuous states that are computed using Simulinks solvers, where in JSBSim_Sfunction, the states are calculated by JSBSim and are considered discrete.  A separate trim S-Function is necessary because the trim function in Simulink needs access to the derivatives in order to calculate an operating point.  
+<p/><b>GUI Control</b><p/>
+The S-function is controlled via the graphical user interface, instead of the default Simulink block parameters or S-function mask box as is typically used.  This is necessary because of the large number of input parameters for both the aircraft model and for JSBSim simulation that would otherwise need to be entered in vector form in the block parameters box.  This proved to be awkward and mistake prone, so a GUI was designed that allows the user a fairly powerful and extensive control interface into JSBSim.  The multi-pane GUI allows the user full control of simulation delta T, JSBSim solver types, verbosity settings, aircraft states and trimming utilities as well as planned capabilities for environment variable control. <br/><p/>
+<img src="JSBSim_GUI.PNG"><p/><br/>
+<img src="JSBSim_GUI_2.PNG"><p/><br/>
+<img src="JSBSim_GUI_3.png" width="700"><p/>
+<p/><b>Current State of Trim Capability</b><p/>
+A reliable trimming capability is highly desirable so that linearized, decoupled state space matrices can be extracted for the purpose of linear controller design and flight model analysis. However, in the current state of the project, the trimming capability is still not fully matured and will require further improvement. One major shortcoming of the current approach is that by default JSBSim uses different integration schemes for rotational and linear motion while Simulink can only specify one integration scheme for both types of motion.  The result is that during simulation runs the differences between JSBSimGUI calculated states and JSBSimTrim calculated states will grow over time and the trim solution (for JSBSimGUI) becomes less accurate.
+<p/><b>Acknowledgments</b><p/>
+Many thanks to Agostino De Marco for generously allowing me to use his JSBSimMEX project as a starting point for the S-function as well as for providing technical assistance on the project and for creating the build macros.
+<p/><p/>
+Thanks also to Jon Berndt for his assistance with the project and for creating a separate page just for the MATLAB versions of JSBSim :-).
+<p/><p/>
+Also thanks to Marius Niculescu of U-Dynamics for allowing me to incorporate his M-language trim and linearization script into the project.
+<p/><p/>
+ Also included in this project are Flight Visualization, by Gus Brown  and tabpanel by Elmar Tarajan.
+<p/><b>JSBSim Sfunction Developer</b><p/>
+The S-function project was developed by Brian Mills and Agostino De Marco.  Brian has worked for 10 years in commercial flight simulation and has most recently worked providing engineering assistance at a start-up commercial flight simulation training center in Tokyo, Japan.
+<p/><p/>
+Agostino is a PhD professor of aerospace engineering at University of Naples Federico II and a developer for JSBSim.
+
+
+    <!-- Start of StatCounter Code -->
+<SCRIPT type=text/javascript>
+sc_project=1910964; 
+sc_invisible=1; 
+sc_partition=17; 
+sc_security="60e19068"; 
+sc_text=2; 
+</SCRIPT>
+
+<SCRIPT src="counter.js" type=text/javascript></SCRIPT>
+<NOSCRIPT>
+<DIV class=statcounter><A href="http://www.statcounter.com/free_web_stats.html" 
+target=_blank><IMG class=statcounter alt="website statistics" 
+src="counter.gif"></A></DIV></NOSCRIPT><!-- End of StatCounter Code -->
+
+</DIV>
+<br/><br/><a href="http://sourceforge.net/projects/jsbsim"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=19399&amp;type=16" width="150" height="40" alt="Get JSBSim Flight Dynamics Model at SourceForge.net. Fast, secure and Free Open Source software downloads" /></a><br/><br/>
+</DIV>
+<BR>
+<!-- Piwik -->
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://sourceforge.net/apps/piwik/jsbsim/" : "http://sourceforge.net/apps/piwik/jsbsim/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://sourceforge.net/apps/piwik/jsbsim/piwik.php?idsite=1" style="border:0" alt=""/></p></noscript>
+<!-- End Piwik Tag -->
+
+</BODY>
+</HTML>

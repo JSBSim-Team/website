@@ -1,0 +1,180 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+    <TITLE>JSBSim Open Source Flight Dynamics Model</TITLE>
+    <META http-equiv=Content-Type content="text/html; charset=utf-8">
+    <META content="JSBSim, flight simulation, fdm, flight dynamics, equations of motion" name=keywords>
+    <LINK media=screen href="StyleSheet2.css" type=text/css rel=stylesheet>
+    <META content="MSHTML 6.00.6000.16674" name=GENERATOR>
+</HEAD>
+<BODY>
+<DIV id=topTitle align=left>
+  <DIV id=redBlockText>
+    An <EM>open source</EM>,<BR>platform-independent,<BR>flight dynamics & control software library in C++
+  </DIV>
+</DIV>
+<UL class=solidblockmenu>
+  <LI><A href="http://jsbsim.sourceforge.net/index.html">Home</A></LI>
+  <LI><A class=current href="http://jsbsim.sourceforge.net/about.html">About Us</A></LI>
+  <LI><A href="https://sourceforge.net/p/jsbsim/news/">News</A></LI>
+  <LI><A href="download.html">Download</A></LI>
+  <LI><A href="documentation.html" title="JSBSim reference material">Documentation</A></li>
+  <LI><A href="https://sourceforge.net/p/jsbsim/mailman/">Mailing List</A></LI>
+  <LI><A href="links.html">Links</A></LI>
+  <LI><A href="http://www.sf.net/projects/jsbsim">SF.net/JSBSim</A></LI>
+  <LI><A href="https://sourceforge.net/p/jsbsim/bugs/" title="View or file a bug report.">Bugs</A></LI>
+  <LI><A href="https://sourceforge.net/p/jsbsim/feature-requests/" title="Make a suggestion to the JSBSim team.">Suggestions</A></LI>
+  <LI><A href="https://sourceforge.net/p/jsbsim/wiki/">Wiki</A> </LI>
+  <LI><A href="http://jsbsim.sf.net/aeromatic2.html" title="Generate aircraft configurations files.">Aeromatic</A></LI>
+  <LI><A href="http://jsbsim.sf.net/matlab.html" title="Use JSBSim with MATLAB/Simulink">MATLAB</A></LI>
+</UL>
+<DIV id=main align=center style="left: 10%; top: 100px">
+<DIV id=mainText>
+<table id="Table1" align="center" bordercolor="silver" cellpadding="3" cellspacing="2" width="100%">
+  <tbody>
+  <tr>
+    <td valign="top"><img alt="Jon Berndt" src="Jon.jpg" align="absmiddle" border="1" height="151" hspace="2" vspace="2" width="120"></td>
+    <td valign="top"><img alt="Tony Peden" src="Tony.jpg" align="absmiddle" border="1" height="151" hspace="2" vspace="2" width="120"></td>
+    <td valign="top"><img alt="David Culp" src="dpculp.jpg" align="absmiddle" border="1" height="150" hspace="2" vspace="2" width="120"></td></tr>
+  <tr>
+    <td valign="top">
+      <p style="text-align: center;"><strong><a href="mailto:jon@jsbsim.org">Jon 
+      Berndt</a></strong>,<br>(Texas, U.S.A.)<br>Lead S/W Architect 
+      &amp; Development Coordinator</p>
+      <p style="margin-left: 5px; margin-right: 5px;" align="left">Jon 
+      designed the original architecture, and continues to refine it, with 
+      inputs from the other team members. He has worked with military and space 
+      training and engineering simulators for many years. Jon is an aero 
+      engineer (University of Minnesota).</p>
+      <p style="margin-left: 5px; margin-right: 5px;" align="left">His 
+      <a href="http://www.facebook.com/jonsberndt" target="new">web site</a>.</p></td>
+    <td valign="top">
+      <p style="text-align: center;"><strong><!--a href="mailto:tony@jsbsim.org"-->Tony 
+      Peden<!--/a--><br></strong>(Washington, 
+      U.S.A.)<br>Co-Author</p>
+      <p style="margin-left: 5px; margin-right: 5px;" align="left">
+      Tony has been contributing to the growth of JSBSim almost from day 
+      1. He is responsible for integrating JSBSim with FlightGear, and for 
+      initialization and trimming. Tony also implemented David's property system 
+      into JSBSim. Tony hails from Ohio State University, with a degree in Aero 
+      and Astronautical Engineering.</p></td>
+    <td valign="top">
+      <p style="text-align: center;"><strong><!--a href="mailto:davidculp2@comcast.net"-->David Culp<!--/a--> 
+      <br></strong>(
+U.S.A.)<br>Developer</p>
+      <p style="margin-left: 5px; margin-right: 5px;" align="left">
+      David developed the turbine simulation for JSBSim, as well as 
+      aircraft models that use it, including the T-38. He has experience flying 
+      many types of military and commercial aircraft, including the T-38, and 
+      the Boeing 707, 727, 737, 757, 767, the SGS 2-32, and the OV-10. David is 
+      an aero engineer (USAF Academy).</p></td></tr>
+  <tr style="height: 10px;" height="10">
+    <td valign="top"></td>
+    <td valign="top"></td>
+    <td valign="top"></td></tr>
+  <tr>
+    <td valign="top"><img alt="Agostino De Marco" src="Agostino.jpg" align="absmiddle" border="1" height="151" hspace="2" vspace="2" width="120"></td>
+    <td valign="top"><img alt="E. Lee Duke" src="Lee1.jpg" align="absmiddle" border="1" height="151" hspace="2" vspace="2" width="120"></td>
+    <td valign="top"><img alt="Mathias Froehlich" src="Mathias.jpg" align="absmiddle" border="1" height="151" hspace="2" vspace="2"></td></tr>
+  <tr>
+    <td valign="top">
+      <p style="text-align: center;"><strong><!--a href="mailto:agodemar@unina.it"-->Agostino De 
+      Marco<!--/a--><br></strong>(Naples, 
+      Italy)<br>Developer/User</p>
+      <p style="margin-left: 5px; margin-right: 5px;" align="left">
+      Agostino De Marco is a professor of aerospace engineering at the 
+      University of Naples in Italy.</p></td>
+    <td valign="top">
+      <p style="text-align: center;"><strong><!--a href="mailto:leeduke@embarqmail.com"-->Lee Duke<!--/a--><br></strong>
+      (Glasgow, Virginia)<br>User/Developer</p>
+      <p style="margin-left: 5px; margin-right: 5px;" align="left">Lee 
+      Duke, the Chief Engineer of Rain Mountain Systems since 2004, retired from 
+      the NASA Dryden Flight Research Center in 2002 where he worked in flight 
+      test, flight controls, modeling and simulation, atmospheric flight 
+      dynamics, flight systems, and applications of artificial intelligence to 
+      aircraft systems. He is a member of IEEE, AIAA, and AUVSI.</p></td>
+    <td valign="top">
+      <p style="text-align: center;"><!--a href="mailto:frohlich%20%3Creplace%20with%20at%3E%20users.sourceforge.net"-->
+      <strong>Mathias Froehlich</strong> 
+      <!--/a--><strong><br></strong>(Germany)<br>Developer</p>
+      <p style="margin-left: 5px; margin-right: 5px;" align="left">
+      Mathias improved and corrected the equations of motion for an early 
+      version JSBSim, among other things.&nbsp;Mathias is a 
+      mathematician.</p></td></tr>
+  <tr style="height: 10px;" height="10">
+    <td valign="top">&nbsp;</td>
+    <td valign="top"></td>
+    <td valign="top"></td></tr>
+  <tr>
+    <td valign="top"><img alt="David Megginson" src="David.jpg" align="absmiddle" border="1" height="151" hspace="2" vspace="2" width="120"></td>
+    <td valign="top"><img alt="Erik Hofman" src="Erik.jpg" align="absmiddle" border="1" height="151" hspace="2" vspace="2" width="120"></td>
+    <td valign="top"><img alt="Anders Gidenstam" src="Anders.jpg" align="absmiddle" border="1" height="151" hspace="2" vspace="2" width="120"></td></tr>
+  <tr>
+    <td valign="top">
+      <p style="text-align: center;">
+      <strong>David Megginson</strong><br>
+      (Canada)<br>
+      Developer</p>
+      <p style="margin-left: 5px; margin-right: 5px;" align="left">
+      David comes from a long involvement as a core FlightGear developer 
+      (where he continues to contribute). David correlates our flight dynamics 
+      with his flying experience, to aid in maximum realism, among other things. 
+      David designed the property system that FlightGear and JSBSim 
+      uses.</p>
+      <p style="margin-left: 5px; margin-right: 5px;" align="left"> 
+      <!--a href="http://www.megginson.com/index.html" target="new">web 
+      site</a-->.</p></td>
+    <td valign="top">
+      <p style="text-align: center;">
+      <strong><!--a href="mailto:erik@ehofman.com"-->Erik Hofman<!--/a--></strong><br>
+      (The Netherlands)<br>
+      Developer</p>
+      <p style="margin-left: 5px; margin-right: 5px;" align="left">
+      Erik does a bit of everything, hunting down aircraft data, creating 
+      flight models (F-16), and some programming. He also tests for IRIX 
+      compatibility.&nbsp; Erik has a degree in Computer Science.</p>
+      <!--p style="margin-left: 5px; margin-right: 5px;" align="left">His 
+      <a href="http://www.a1.nl/%7Eehofman/" target="new">web site</a>. 
+      </p--></td>
+    <td valign="top">
+      <p style="text-align: center;">
+      <strong><!--a href="mailto:anders@gidenstam.org"-->Ander Gidenstam<!--/a--></strong><br>
+          (Germany)<br>
+      Developer</p>
+      <p style="margin-left: 5px; margin-right: 5px;" align="left">
+          Anders added the lighter-than-air capability to JSBSim.</p>
+      <p style="margin-left: 5px; margin-right: 5px;" align="left">His 
+      <a href="http://www.gidenstam.org" target="new">web site</a>. 
+      </p></td>
+    </tr></tbody></table>
+<BR><BR>
+<!-- Start of StatCounter Code -->
+<SCRIPT type=text/javascript>
+sc_project=1910964; 
+sc_invisible=1; 
+sc_partition=17; 
+sc_security="60e19068"; 
+sc_text=2; 
+</SCRIPT>
+
+<SCRIPT src="counter.js" type=text/javascript></SCRIPT>
+<NOSCRIPT>
+<DIV class=statcounter><A href="http://www.statcounter.com/free_web_stats.html" 
+target=_blank><IMG class=statcounter alt="website statistics" 
+src="counter.gif"></A></DIV></NOSCRIPT>
+<!-- End of StatCounter Code -->
+</DIV><a href="http://sourceforge.net/projects/jsbsim"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=19399&amp;type=16" width="150" height="40" alt="Get JSBSim Flight Dynamics Model at SourceForge.net. Fast, secure and Free Open Source software downloads" /></a><br/><br/></DIV><BR><BR><BR>
+<!-- Piwik -->
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://sourceforge.net/apps/piwik/jsbsim/" : "http://sourceforge.net/apps/piwik/jsbsim/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://sourceforge.net/apps/piwik/jsbsim/piwik.php?idsite=1" style="border:0" alt=""/></p></noscript>
+<!-- End Piwik Tag -->
+
+</BODY></HTML>

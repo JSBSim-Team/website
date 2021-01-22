@@ -1,0 +1,495 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<HTML xmlns="http://www.w3.org/1999/xhtml">
+<HEAD>
+<TITLE>JSBSim Open Source Flight Dynamics Model</TITLE>
+<META http-equiv=Content-Type content="text/html; charset=windows-1252">
+<META content="JSBSim, flight simulation, fdm, flight dynamics, equations of motion" name=keywords>
+<LINK media=screen href="StyleSheet2.css" type=text/css rel=stylesheet>
+<META content="MSHTML 6.00.6000.16674" name=GENERATOR></HEAD>
+<BODY>
+<DIV id=topTitle align=left>
+  <DIV id=redBlockText>An <EM>open source</EM>,<BR>platform-independent,<BR>flight dynamics & control software library in C++
+  </DIV>
+</DIV>
+<UL class=solidblockmenu>
+  <LI><A href="index.html">Home</A></LI>
+  <LI><A href="about.html">About Us</A></LI>
+  <LI><A href="https://sourceforge.net/p/jsbsim/news/">News</A></LI>
+  <LI><A href="download.html">Download</A></LI>
+  <LI><A href="documentation.html" title="JSBSim reference material">Documentation</A></li>
+  <LI><A href="https://sourceforge.net/p/jsbsim/mailman/">Mailing List</A></LI>
+  <LI><A class="current" href="links.html">Links</A></LI>
+  <LI><A href="http://www.sf.net/projects/jsbsim">SF.net/JSBSim</A></LI>
+  <LI><A href="https://sourceforge.net/p/jsbsim/bugs/" title="View or file a bug report.">Bugs</A></LI>
+  <LI><A href="https://sourceforge.net/p/jsbsim/feature-requests/" title="Make a suggestion to the JSBSim team.">Suggestions</A></LI>
+  <LI><A href="https://sourceforge.net/p/jsbsim/wiki/">Wiki</A> </LI>
+  <LI><A href="http://jsbsim.sf.net/aeromatic2.html" title="Generate aircraft configurations files.">Aeromatic</A></LI>
+  <LI><A href="http://jsbsim.sf.net/matlab.html" title="Use JSBSim with MATLAB/Simulink">MATLAB</A></LI>
+</UL>
+<DIV id=main align=center>
+<DIV id=mainText>
+<DIV align=left>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+  <TBODY>
+  <TR>
+    <TD width="1%">&nbsp;</TD>
+    <TD colSpan=2>
+      <P><STRONG>Links</STRONG><BR>
+      <BR>The following links are provided solely because they may 
+      feature information useful to aircraft flight simulation modelers. 
+      </P>
+        <P><U>Table of Contents</U></P>
+        <UL>
+          <LI>
+            <A href="http://jsbsim.sourceforge.net/links.html#general">
+            General Links</A></LI>
+          <LI>
+            <A href="http://jsbsim.sourceforge.net/links.html#opensource">
+            Open Source Software Tools</A></LI>
+          <LI>
+            <A href="http://jsbsim.sourceforge.net/links.html#onlinebooks">
+            Online Books, References, and Tutorials</A></LI>
+          <LI>
+            <A href="http://jsbsim.sourceforge.net/links.html#importantnasaaiaa">
+            Important NASA &amp; AIAA Reports</A><BR/>
+              - Simulation<BR/>
+              - Aircraft Modeling Data</LI>
+          <LI>
+            <A href="http://jsbsim.sourceforge.net/links.html#importantnaca">
+            Important Historical NACA Reports<BR/></A>
+              - Propellers<BR/>
+              - Helicopters<BR/>
+              - Aircraft Performance<BR/>
+              - Mass Properties<BR/>
+              - Aerodynamics</LI>
+          <LI>
+            <A href="http://jsbsim.sourceforge.net/links.html#onlineperiodicals">
+            Aerospace Periodicals</A></LI>
+        </UL>
+      <P>
+      <IMG style="WIDTH: 26px; HEIGHT: 13px" height=13 
+        alt="This is a key JSBSim development document" hspace=2 
+        src="important.gif" width=26 align=middle useMap="" border=0> 
+      This symbol denotes a key JSBSim development resource.<BR/><BR/>
+      <A href="http://jsbsim.sf.net/" target=_top>
+      Back to the JSBSim homepage</A><br/>
+      </P>
+    </TD></TR>
+  <TR>
+    <TD width=1>&nbsp;</TD>
+    <TD style="text-align:left">
+      <A name="general"/>
+        <P><STRONG>General</STRONG></P>
+        <UL>
+          <LI><A href="http://flightgear.sourceforge.net/">
+            FlightGear Home Page</A></LI>
+          <LI><A href="http://techreports.larc.nasa.gov/cgi-bin/NTRS">
+            NASA Langley Technical Report Server</A></LI>
+          <LI><A href="http://www.pdas.com/">
+            Public Domain Aeronautical Software*</A></LI> 
+          <LI><A href="http://www.gamasutra.com/">
+            GamaSutra Game Developer's Site</A></LI> 
+          <LI><A href="http://www.opengl.org/">
+            OpenGL</A></LI> 
+          <LI><A href="http://www.microwings.com/">
+            MicroWings</A></LI> 
+          <LI><A href="http://www.airforce-technology.com/index.html">
+            Air Force Technology</A></LI> 
+          <LI><A href="http://aviation-safety.net/database/type/">
+            Aviation Safety: Sorted by Aircraft Type</A></LI> 
+          <LI><A href="http://www.ae.uiuc.edu/m-selig/">
+            UIUC Applied Aerodynamics Group</A></LI>
+        </UL>
+        <A name="opensource"/>
+        <P><STRONG>Open Source Software Tools We Use</STRONG></P>
+        <UL>
+          <LI>
+            <A href="http://www.stack.nl/~dimitri/doxygen/">
+            Doxygen - Automatic generation of API documentation</A></LI>
+          <LI>
+            <A href="http://www.cygwin.com/">Cygwin - A Unix-like environment under MS Windows
+            </A></LI>
+          <LI>
+            <A href="http://www.cvshome.org/">CVS</A> - 
+            "Concurrent Versions System", code management software</LI>
+        </UL>
+        <A name="onlinebooks"/>
+        <P><STRONG>Online Books, References, and Tutorials</STRONG></P>
+        <UL>
+          <LI>
+            <A href="http://adg.stanford.edu/aa208/amsc.html">
+              Aerodynamic Modeling for Simulation and Control</A></LI>
+          <LI>
+            <A href="http://www.airweb.faa.gov/Regulatory_and_Guidance_Library/rgMakeModel.nsf/MainFrame?OpenFrameSet">
+            FAA: Type Certificate Data Sheets</A></LI>
+          <LI>
+            <IMG style="WIDTH: 26px; HEIGHT: 13px" height=13 
+            alt="This is a key JSBSim development document" hspace=2 
+            src="important.gif" width=26 align=middle border=0>
+            <A href="http://www.simlabs.arc.nasa.gov/library/mcfarland/mcfarland.html">
+              NASA: "Real-Time Simulation Documents"</A></LI>
+          <LI>
+            <A href="http://history.nasa.gov/SP-367/cover367.htm">
+            NASA SP-367: "Introduction to the Aerodynamics of Flight"</A></LI>
+          <LI>
+            <A href="http://history.nasa.gov/SP-09-511.pdf">
+            NASA SP-09-511: "Celebrating a Century of Flight"</A></LI>
+          <LI>
+            <A href="http://history.nasa.gov/centtimeline/index.html">
+            NASA: "The First Century of Flight: NACA/NASA Contribution to Aeronautics"</A></LI>
+          <LI>
+            <A href="http://www.hq.nasa.gov/office/pao/History/SP-60/cover.html">
+            NASA SP-60: "X-15 Research Results"</A></LI>
+          <LI>
+            <IMG style="WIDTH: 26px; HEIGHT: 13px" height=13 
+            alt="This is a key JSBSim development document" hspace=2 
+            src="important.gif" width=26 align=middle border=0>
+            <A href="http://www.movesinstitute.org/~zyda/pubs/Presence.1.4.pdf">
+            NPSNET: Flight Simulation Dynamic Modeling Using Quaternions</A></LI>
+          <LI>
+            <A href="http://www.aoe.vt.edu/~mason/Mason_f/MRsoft.html">
+            Virginia Tech, Dr. William Mason: Software for Aerodynamics and Aircraft 
+            Design</A></LI>
+          <LI>
+            <A href="http://www.aoe.vt.edu/~mason/Mason_f/MRedumatl.html">
+            Virginia Tech, Dr. William Mason: Electronic Course Materials</A></LI>
+        </UL>
+        <A name="importantnasaaiaa"/>
+        <P><STRONG>Important &amp; Relevant NASA &amp; AIAA Reports</STRONG></P>
+        <P><U><STRONG>Simulation</STRONG></U></P>
+        <UL>
+          <LI>
+            <A href="http://daveml.nasa.gov/papers/DAVEusingXML.pdf">
+            Flight Dynamic Model Exchange using XML</A>&nbsp;(Adobe PDF)</LI>
+          <LI>
+            <a href="http://hdl.handle.net/2060/20040110806">
+            Architecting a Simulation Framework for Model Rehosting</a>(Adobe PDF)</LI>
+          <LI>
+            <A href="http://hdl.handle.net/2060/19990046064">
+            Design and Development of Lateral Flight Director, NASA/TM-1999-208957</A> (Adobe PDF)</LI> 
+          <LI>
+            <A href="http://hdl.handle.net/2060/20040034718">
+            Simulating the ARES Aircraft in the Mars Environment</A> (Adobe PDF)</LI>
+          <LI>
+            <A href="http://hdl.handle.net/2060/20040085931">
+            Rapid Prototyping of an Aircraft Model in an Object-Oriented Simulation</A> (Adobe PDF)</LI>
+          <LI>
+            <A href="http://hdl.handle.net/2060/19910009766">
+            Simple Dynamic Engine Model for Use in a Real-Time Aircraft Simulation With Thrust Vectoring</A> (Adobe PDF)</LI>
+          <LI>
+            <A href="http://www.nasa.gov/centers/dryden/pdf/88238main_H-1731.pdf">
+            MODELING, SIMULATION, AND FLIGHT CHARACTERISTICS OF AN 
+            AIRCRAFT DESIGNED TO FLY AT 100,000 FEET, NASA-TM-104236, September 
+            1991, DFRC</A> (Adobe PDF)</LI>
+          <LI>
+            <A href="http://www.nasa.gov/centers/dryden/pdf/88059main_H-1356.pdf">
+            SIMULATION STUDIES OF ALTERNATE LONGITUDINAL CONTROL 
+            SYSTEMS FOR THE SPACE SHUTTLE ORBITER IN THE LANDING REGIME, 
+            NASA-TM-86815, January 1986, DFRC</A> (Adobe PDF)</LI>
+          <LI>
+            <A href="http://www.nasa.gov/centers/dryden/pdf/88241main_H-1741.pdf">
+            A SIMULATION EVALUATION OF A FOUR-ENGINE JET TRANSPORT 
+            USING ENGINE THRUST MODULATION FOR FLIGHTPATH CONTROL, NASA-TM-4324, 
+            September 1991, DFRC</A> (Adobe PDF)</LI>
+          <LI>
+            <A href="http://ntrs.nasa.gov/archive/nasa/casi.ntrs.nasa.gov/19920003846_1992003846.pdf">
+            An Aircraft Model for the AIAA Controls Design Challenge</A> (Adobe PDF)</LI>
+          <LI>
+            <A href="http://www.simlabs.arc.nasa.gov/library/mcfarland/Delays.pdf">
+            Analyzing Time Delays in a Flight Simulation Environment 
+            AIAA-90-3174, Sept. 1990</A> (Adobe PDF)</LI>
+          <LI>
+            <IMG style="WIDTH: 26px; HEIGHT: 13px" height=13 
+            alt="This is a key JSBSim development document" hspace=2 
+            src="important.gif" width=26 align=middle border=0>
+            <A href="http://www.simlabs.arc.nasa.gov/library/mcfarland/Basis.pdf">
+            A Standard Kinematic Model for Flight Simulation at 
+            NASA-Ames NASA CR 2497, Jan. 1975</A>  (Adobe PDF)<BR/>
+            Note: Equation 3.27 in this reference (CR2497) is in error. 
+            The equation should be:
+            <PRE>Phidot = P + [Q*sin(phi) + R*cos(phi)] * [sin(tht)/cos(tht)] </PRE>
+            For comparison,
+            <A href="http://www.simlabs.arc.nasa.gov/library/mcfarland/Toms.pdf">
+            see Simulator Aero Model Implementation NASA Ref. Pub. 1374, 
+            DOT/FAA/CT-94/83</A> or Stevens and Lewis "Aircraft Control and 
+            Simulation" second edition, eqn. 1.3-22a.</LI>
+          <LI>
+            <IMG style="WIDTH: 26px; HEIGHT: 13px" height=13 
+            alt="This is a key JSBSim development document" hspace=2 
+            src="important.gif" width=26 align=middle border=0>
+            <A href="http://www.simlabs.arc.nasa.gov/library/mcfarland/Toms.pdf">
+            Simulator Aero Model Implementation NASA Ref. Pub. 1373, 
+            DOT/FAA/CT-94/83, 1995</A> (Adobe PDF)</LI>
+          <LI>
+            <A href="http://www.simlabs.arc.nasa.gov/library/mcfarland/NRev.pdf">
+            The N/Rev phenomenon in Simulating a Blade-Element Rotor 
+            System NASA TM 84344, March 1983</A> (Adobe PDF)</LI>
+          <LI>
+            <A href="http://www.simlabs.arc.nasa.gov/library/mcfarland/shock.pdf">
+            Anticipation of the Landing Shock NASA TM 89465, Sept. 
+            1987</A> (Adobe PDF)</LI>
+          <LI>
+            <A href="http://www.simlabs.arc.nasa.gov/library/mcfarland/Feast.pdf">
+            Finite Element Aircraft Simulation of Turbulence NASA TM 
+            110437, Feb. 1997</A> (Adobe PDF)</LI>
+          <LI>
+            <A href="http://www.simlabs.arc.nasa.gov/library/mcfarland/Sorbet.pdf">
+            Simulation of Rotor Blade Element Turbulence NASA TM 
+            108862, Jan. 1995</A> (Adobe PDF)</LI>
+          <LI>
+            <IMG style="WIDTH: 26px; HEIGHT: 13px" height=13 
+            alt="This is a key JSBSim development document" hspace=2 
+            src="important.gif" width=26 align=middle border=0>
+            <A href="http://www.movesinstitute.org/~zyda/pubs/Presence.1.4.pdf">
+            NPSNET: Flight Simulation Dynamic Modeling 
+            Using Quaternions</A> (Adobe PDF)</LI>
+          <LI>
+            <A href="http://www.simlabs.arc.nasa.gov/library/mcfarland/trim.pdf">
+            Trimming an Aircraft Model for Flight Simulation NASA TM 
+            89466, OCT. 1987</A> (Adobe PDF)</LI>
+          <LI>
+            <A href="http://www.ae.uiuc.edu/m-selig/apasim/pubs/AIAA_Paper_2003-0023.pdf">
+            Icing Encounter Flight Simulator</A> (Adobe PDF)</LI>
+          <LI>
+            <A href="http://www.nasa.gov/centers/dryden/pdf/88104main_H-1391.pdf">
+            Derivation and Definition of a Linear Aircraft Model</A> (Adobe PDF)</LI>
+          <LI>
+            <A href="http://hdl.handle.net/2060/19880020435">
+            Minimum-complexity helicopter simulation math model</A> (Adobe PDF)</LI>
+          <LI>
+            <A href="http://hdl.handle.net/2060/19940031931">
+            The Analysis of a Generic Air-to-Air Missile 
+            Simulation Model</A> NASA-94-TM109057 (Adobe PDF)</LI>
+          <LI>
+            <A href="http://hdl.handle.net/2060/19950019882">
+            Aerodynamics Model for a Generic ASTOVL Lift-Fan 
+            Aircraft</A> NASA Technical Memorandum 110347 (Adobe PDF)</LI>
+          <LI>
+            <A href="http://www.nasa.gov/centers/dryden/pdf/88087main_H-1394.pdf">
+            Aircraft Parameter Estimation</A> AIAA Dryden Lecture in Research for 1987, 
+            NASA Technical Memorandum 88281 (Adobe PDF)</LI>
+          <LI>
+            <A href="http://hdl.handle.net/2060/19790011963">
+            Stability and Control Derivative Estimates Obtained 
+            From Flight Data for the Beech 99 Aircraft</A>
+            NASA Technical Memorandum 72863 (Adobe PDF)</LI>
+          <LI>
+            <A href="http://hdl.handle.net/2060/19950012150">
+            In-Flight Lift-Drag Characteristics for a 
+            Forward-Swept Wing Aircraft (and Comparisons With Contemporary 
+            Aircraft)</A> NASA Technical Paper 3414 (Adobe PDF)</LI>
+          <LI>
+            <A href="http://hdl.handle.net/2060/19930022544">
+            Supersonic Aerodynamic Characteristics of an 
+            Advanced F-16 Derivative Aircraft Configuration</A> 
+            NASA Technical Paper 3355 (Adobe PDF)</LI>
+          <LI>
+            <A href="http://www.holycows.net/datcom/AIAA-1985-4070-141.pdf">Prediction of 
+            Fighter Aircraft Dynamic Derivatives Using Digital DATCOM</A>, Blake, 
+            1985 (409 KB Adobe PDF)</LI> 
+          </UL>
+          <P><U><STRONG>Aircraft Modeling Data</STRONG></U></P>
+        <UL>
+          <LI>
+            <A href="NASA_CR-96008.pdf">
+            Aircraft Stability and Control Data</A>
+            , G. Teper, 1969, NASA CR-96008 (3.2 MB Adobe PDF) Aircraft 
+            presented: A-7A, A-4D, F-104, F-105B, B-58, Navion, DC-8</LI> 
+          <LI>
+            <A href="NASA_TN_D-5361.pdf">
+            Analysis Of Lateral-Directional Stability Characteristics Of A Twin-Jet Fighter 
+            Airplane At High Angles Of Attack</A>, Chambers, Anglin, 1969, NASA TN 
+            D-5361 (5.0 MB Adobe PDF) Aircraft Presented: F-4 Phantom (extensive 
+            data presented)</LI>
+          <LI>
+            <A href="NASA_TN_D-6993.pdf">
+            Summary of Directional 
+            Divergence Characteristics of Several High-Performance Aircraft 
+            Configurations</A>, Greer, 1972, NASA TN D-6993 (3.4 MB Adobe PDF) 
+            Aircraft Presented: X-15, F-104, F-4, F-111, F-5/T-38, B-58, etc.</LI>
+          <LI>
+            <A href="NASA_CR-2144.pdf">Aircraft Handling 
+            Qualities Data</A>, Heffley, Jewell, 1972, NASA CR-2144 (6.9 MB Adobe 
+            PDF) Aircraft Presented: NT-33, F-104A, F-4C, X-15, HL-10, Jetstar, 
+            CV-880, B-747, C-5A, XB-70A Note: This is a key and often-referenced 
+            paper in flight modeling - a real gem.</LI>
+          <LI>
+            <A href="http://jsbsim.sf.net/NASA_TM-4356.pdf">
+            Linearized Aerodynamic 
+            and Control Models of the X-29A Airplane and Comparison with Flight 
+            Data</A>, Bosworth, 1992 (3.0 MB Adobe PDF)</LI>
+          </UL>
+        <A name="importantnaca"/>
+        <P><STRONG>Important &amp; Relevant Historical NACA Reports</STRONG></P>
+        <P><STRONG><U>Propellers</U></STRONG></P>
+        <UL>
+          <LI><A href="http://hdl.handle.net/2060/19930081532">
+            A generalized vortex theory of the screw propeller and its application</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1954/naca-tn-3228/">
+            Aerodynamic investigation of a four-blade propeller operating through an 
+            angle-of-attack range from 0 to 180 degrees</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1951/naca-tn-2164/">
+            Axial-momentum theory for propellers in compressible flow</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1948/naca-tn-1721/">
+            Calculation of the effect of thrust-axis inclination on propeller disk
+            loading and comparison with flight measurements</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1954/naca-tn-3304/">
+            Investigation of the aerodynamic characteristics of a model wing-propeller combination and 
+            of the wing and propeller separately at angles of attack up to 90 degrees</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1922/naca-tn-91/">
+            Notes on propeller design I the energy losses of the propeller</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1920/naca-tm-1/">
+            On the elementary relation between pitch, slip, and propulsive efficiency</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1926/naca-tn-237/">
+            Propeller design - a simple system based on model propeller test data III</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1926/naca-tn-236/">
+            Propeller design extension of test data on a family of model
+            propellers by means of the modified blade element theory II</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1926/naca-tn-235/">
+            Propeller design I practical application of the blade element theory</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1922/naca-tm-79/">
+            Propeller theory of Professor Joukowski and his pupils</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1947/naca-tn-1338/">
+            Propeller-efficiency charts for light airplanes</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1953/naca-tn-2966/">
+            Propeller-performance charts for transport airplanes</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1943/naca-wr-l-336/">
+            Proposal for a propeller side-force factor</A></LI>
+          <LI>
+            <IMG style="WIDTH: 26px; HEIGHT: 13px" height=13 alt="This is a key JSBSim development document" hspace=2 
+            src="important.gif" width=26 align=middle border=0>
+            <A href="http://naca.larc.nasa.gov/reports/1938/naca-report-640/">
+            The aerodynamic characteristics of full-scale propellers having 2, 3, and 4 blades of
+            Clark y and R.A.F. 6 airfoil sections</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1922/naca-tn-83/">
+            The theory of the screw propeller</A></LI>
+        </UL>
+
+        <P><STRONG><U>Helicopters</U></STRONG></P>
+
+        <UL>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1956/naca-report-1266/">
+            Charts for estimating performance of high-performance helicopters</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1947/naca-tn-1192/">
+            Charts showing relations among primary aerodynamic variables
+            for helicopter-performance estimation</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1920/naca-tn-4/">
+            The problem of the helicopter</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1949/naca-tn-1812/">
+            The application of airfoil studies to helicopter rotor design</A></LI>
+        </UL>
+
+        <P><STRONG><U>Aircraft Performance</U></STRONG></P>
+
+        <UL>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1929/naca-tn-302/">
+            A new method for the prediction of airplane performance</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1938/naca-tn-643/">
+            A study of flying-boat take-off</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1927/naca-tn-257/">
+            Technical preparation of the airplane - Spirit of St. Louis.</A></LI>
+          <LI><A href="http://jsbsim.sourceforge.net/spit_flying.pdf">
+            NACA Report L-334, Measurements of the Flying Qualities of 
+            the Supermarine Spitfire V A Airplane</A></LI>
+          <LI><A href="http://jsbsim.sourceforge.net/spit_stalling.pdf">
+            NACA Report L-353, Stalling Characteristics of the Supermarine Spitfire V A 
+            Airplane</A></LI>
+        </UL>
+        
+        <P><STRONG><U>Mass Properties</U></STRONG></P>
+
+        <UL>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1936/naca-tn-575/">
+            Estimation of moments of inertia of airplanes from design data</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1940/naca-tn-780/">
+            Measured moments of inertia of 32 airplanes</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1953/naca-rm-53b19/">
+            Weight bar charts</A></LI>
+        </UL>
+
+        <P><STRONG><U>Aerodynamics</U></STRONG></P>
+
+        <UL>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1925/naca-tn-223/">
+            Determination of the lift and drag characteristics of an airplane in flight</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1952/naca-rm-a52c04/">
+            Experimental investigation of the static aerodynamic and dynamic damping-in-roll 
+            characteristics of an 8-cm aircraft rocket with solid and slotted 
+            fins</A></LI>
+          <LI><A href="http://techreports.larc.nasa.gov/ltrs/PDF/NASA-96-tm110216.pdf">
+            F-18 Simulation</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1922/naca-tn-92/">
+            Full scale determination of the lift and drag of a seaplane</A></LI>
+          <LI><A href="http://www.dfrc.nasa.gov/DTRS/1994/PDF/H-1913.pdf">
+            In-Flight Lift-Drag Characteristics</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1938/naca-tn-666/">
+            Longitudinal stability in relation to the use of an automatic pilot</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1922/naca-tn-113/">
+            Report on the general design of commercial aircraft</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1932/naca-tn-412/">
+            The aerodynamic characteristics of airfoils at negative angles of attack</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1927/naca-tn-269/">
+            The distribution of loads between the wings of a biplane having decalage</A></LI>
+          <LI><A href="http://naca.larc.nasa.gov/reports/1938/naca-tn-636/">
+            The estimation of the rate of change of yawing moment with sideslip</A></LI>
+        </UL>
+      <A name="onlineperiodicals"/>
+        <P><STRONG>Aerospace Periodicals and Online Presence</STRONG></P>
+        <UL>
+          <LI>
+            <A href="http://www.aerospaceonline.com/content/homepage/default.asp?VNETCOOKIE=NO">
+              Aerospace Online</A></LI>
+          <LI>
+            <A href="http://www.aviationnow.com/">
+              Aviation Week and Space Technology</A></LI>
+        </UL>
+      </TD>
+    <TD width="1%">&nbsp;</TD></TR>
+  <TR>
+    <TD width="1%">&nbsp;</TD>
+    <TD>
+      <UL>
+        <LI>Thanks to Ralph Carmichael for his support 
+        of the FlightGear project. At <A href="http://www.pdas.com/">Public Domain 
+        Aeronautical Software</A> you will find 
+        the PDAS CD-ROM for sale, packed with great programs of use to 
+        aeronautical engineers. At this web site there are also some sample 
+        downloads to show what is on the CD.</LI>
+      </UL>
+    </TD>
+    <TD>&nbsp;</TD>
+    <TD width="1%">&nbsp;</TD></TR></TBODY></TABLE>
+    </DIV>
+    <!-- Start of StatCounter Code -->
+<SCRIPT type=text/javascript>
+sc_project=1910964; 
+sc_invisible=1; 
+sc_partition=17; 
+sc_security="60e19068"; 
+sc_text=2; 
+</SCRIPT>
+
+<SCRIPT src="counter.js" type=text/javascript></SCRIPT>
+<NOSCRIPT>
+<DIV class=statcounter><A href="http://www.statcounter.com/free_web_stats.html" 
+target=_blank><IMG class=statcounter alt="website statistics" 
+src="counter.gif"></A></DIV></NOSCRIPT><!-- End of StatCounter Code -->
+</DIV>
+<a href="http://sourceforge.net/projects/jsbsim"><img src="http://sflogo.sourceforge.net/sflogo.php?group_id=19399&amp;type=16" width="150" height="40" alt="Get JSBSim Flight Dynamics Model at SourceForge.net. Fast, secure and Free Open Source software downloads" /></a><br/><br/>
+</DIV>
+<BR>
+<!-- Piwik -->
+<script type="text/javascript">
+var pkBaseURL = (("https:" == document.location.protocol) ? "https://sourceforge.net/apps/piwik/jsbsim/" : "http://sourceforge.net/apps/piwik/jsbsim/");
+document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script type="text/javascript">
+try {
+var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 1);
+piwikTracker.trackPageView();
+piwikTracker.enableLinkTracking();
+} catch( err ) {}
+</script><noscript><p><img src="http://sourceforge.net/apps/piwik/jsbsim/piwik.php?idsite=1" style="border:0" alt=""/></p></noscript>
+<!-- End Piwik Tag -->
+
+</BODY>
+</HTML>
